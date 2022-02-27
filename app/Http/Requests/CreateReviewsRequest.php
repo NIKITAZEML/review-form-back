@@ -25,7 +25,7 @@ class CreateReviewsRequest extends FormRequest
     {
         return [
             'name' => 'required|max:20',
-            'phone' => 'required|integer|max:15',
+            'phone' => 'required|max:15',
             'review' => 'required|max:255'
         ];
     }

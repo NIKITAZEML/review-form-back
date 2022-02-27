@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateReviewsRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 use App\Models\ReviewModel;
+
 
 class ReviewController extends Controller
 {
@@ -19,6 +21,8 @@ class ReviewController extends Controller
 
     public function reviewSave(CreateReviewsRequest $req){
         $review = ReviewModel::create($req->all());
+        Storage::disk('local')->put('review.txt', $req);
         return response()->json($review, 201);
     }
 }
+
