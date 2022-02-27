@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateReviewsRequest;
 use Illuminate\Http\Request;
 
 use App\Models\ReviewModel;
@@ -16,7 +17,7 @@ class ReviewController extends Controller
         return response()->json(ReviewModel::find($id), 200);
     }
 
-    public function reviewSave(Request $req){
+    public function reviewSave(CreateReviewsRequest $req){
         $review = ReviewModel::create($req->all());
         return response()->json($review, 201);
     }
