@@ -20,5 +20,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('review', 'ReviewController@review');
 Route::get('review/{id}', 'ReviewController@reviewById');
+Route::get('news', 'NewsController@news');
 
 Route::post('review', 'ReviewController@reviewSave');

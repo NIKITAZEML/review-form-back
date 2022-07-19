@@ -5,20 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ReviewModel extends Model
+class NewsModel extends Model
 {
     use HasFactory;
 
-    protected $table = "reviews";
+    protected $table = "news";
 
     public $timestamps = false;
 
     protected $fillable = [
         'id',
-        'name',
-        'address',
-        'phone',
-        'email',
-        'review'
+        'date',
+        'text',
     ];
 }
